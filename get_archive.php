@@ -142,11 +142,13 @@ function parseMonth($month) {
 			preg_match_all('/<PRE>(.*?)<\/PRE>/mi', $content, $current);
 		
 			$tmpjson["text"] = addslashes($current[1][0]);
+			
+			sleep(1);
 		}
 		
 		$json = json_encode($tmpjson);
 		
-		file_put_contents($jsonfile, $json); exit;
+		file_put_contents($jsonfile, $json);
 	}
 
 }
