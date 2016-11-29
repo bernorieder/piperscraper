@@ -102,10 +102,10 @@ function getMonth($month) {
 			
 			if($content) {
 				
-	            $content = preg_replace('/[\r\n]/', ' ', $content);
+				$content = preg_replace('/[\r\n]/', ' ', $content);
 				
 				// parse date
-	            preg_match_all('/<I>(.*?)<\/I>/mi', $content, $regdate);
+				preg_match_all('/<I>(.*?)<\/I>/mi', $content, $regdate);
 				$newdate = date( 'Y-m-d H:i:s', strtotime($regdate[1][0]));
 				$tmpjson["date"] = $newdate;
 				
