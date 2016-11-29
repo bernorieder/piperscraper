@@ -2,7 +2,6 @@
 
 // basic configuration, normally the only thing to modify
 $mainurl = "http://listserv.aoir.org/pipermail/air-l-aoir.org/";
-$localpath = "/Applications/XAMPP/xamppfiles/htdocs/labs.polsys.net/tools/piperscraper";
 
 
 // basic script config
@@ -12,14 +11,15 @@ ini_set("memory_limit","500M");
 ini_set("error_reporting",1);
 
 // folder parameters
+$localpath = getcwd();
 $jsonpath = "/json_mail";
 $shaid = "/" . sha1($mainurl);
 $jsondir = $localpath . $jsonpath . $shaid;
 
+
 // check for json directories, if not there make them
 if(!file_exists($localpath . $jsonpath)) { mkdir($localpath . $jsonpath); }
 if(!file_exists($jsondir)) { mkdir($jsondir); }
-
 
 // create a basic log file
 if(!file_exists($jsondir . ".log")) {
