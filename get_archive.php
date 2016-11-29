@@ -11,8 +11,7 @@ set_time_limit(3600*5);
 ini_set("memory_limit","500M");
 ini_set("error_reporting",1);
 
-// folder paramerters; TODO: put URL into parameter
-
+// folder parameters
 $jsonpath = "/json_mail";
 $shaid = "/" . sha1($mainurl);
 $jsondir = $localpath . $jsonpath . $shaid;
