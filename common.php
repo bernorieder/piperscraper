@@ -44,9 +44,9 @@ function selectArchive() {
 }
 
 
+// get mail files from directory
 function getMails($jsondir) {
 	
-	// get files from directory
 	$jsonfiles = array();
 	if ($dh = opendir($jsondir)) {
 		while (($file = readdir($dh)) !== false) {
