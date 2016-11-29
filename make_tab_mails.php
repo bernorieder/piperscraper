@@ -47,7 +47,6 @@ foreach($jsonfiles as $jsonfile) {
 
 fclose($fp);
 
-//file_put_contents($filename_tab, "\xEF\xBB\xBF".$content);
 
 echo "\nprocessed " . count($jsonfiles) . " mails, file written\n\n";
 

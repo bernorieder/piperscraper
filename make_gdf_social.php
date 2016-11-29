@@ -22,8 +22,6 @@ foreach($jsonfiles as $jsonfile) {
 	$file = $jsondir . "/" . $jsonfile;
 	$data = json_decode(file_get_contents($file));
 	
-	//print_r($data); exit;
-	
 	$data->author = strtolower($data->author);
 	
 	$mailbag[$data->id] = $data;
@@ -38,7 +36,6 @@ foreach($jsonfiles as $jsonfile) {
 	}
 }
 
-//print_r($mailbag); exit;
 
 
 $filename_gdf = $localpath . $jsonpath . $shaid . "_social.gdf";
@@ -77,6 +74,7 @@ foreach($relations as $name => $value) {
 }
 
 file_put_contents($filename_gdf, $content, FILE_APPEND);
+
 
 echo "\nprocessed " . count($jsonfiles) . " mails, file written\n\n";
 
