@@ -4,17 +4,8 @@
 $mainurl = "http://listserv.aoir.org/pipermail/air-l-aoir.org/";
 
 
-// basic script config
-ignore_user_abort(false);
-set_time_limit(3600*5);
-ini_set("memory_limit","500M");
-ini_set("error_reporting",1);
-
-// folder parameters
-$localpath = getcwd();
-$jsonpath = "/json_mail";
-$shaid = "/" . sha1($mainurl);
-$jsondir = $localpath . $jsonpath . $shaid;
+// file includes
+include("common.php");
 
 
 // check for json directories, if not there make them
